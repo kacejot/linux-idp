@@ -3,6 +3,10 @@
 target_path=$1
 logfile=$2
 
+if [[ -z "$1" && -z "$2" ]]
+then
+    echo "Attention! Both arguments are empty. Using default values..."
+fi
 
 my_full_path=$(realpath $0)
 

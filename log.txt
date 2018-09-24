@@ -1,6 +1,0 @@
-test2/5.sh is now executable
-test2/1.sh is now executable
-test2/2.sh is now executable
-test2/3.sh is now executable
-test2/4.sh is now executable
-test2/5.sh is now executable

@@ -28,12 +28,6 @@ namespace gen
     {
         return m_randomizer();
     }
-
-	auto get_default_random_engine(const std::string& seed = "")
-	{
-		std::seed_seq seed_sequence(seed.begin(), seed.end());
-		return std::default_random_engine(seed_sequence);
-	}
 }
 
 #endif//H_GEN_RANDOMIZER_INCLUDED

@@ -24,6 +24,19 @@ namespace gen
     // Implementation
 
     template <typename T>
+    Randomizer<T>::Randomizer(T left_border, T right_border, const std::string& seed) : m_left_border(left_border), m_right_border(right_border)
+    {
+        static_assert(std::is_floating_point_v<T>, "Type should be floating point");
+
+        std::seed_seq seed_sequence(seed.begin(), seed.end());
+
+        auto generator = std::default_random_engine(seed_sequence);
+        auto distribution = std::uniform_real_distribution<T>(left_border, right_border);
+
+        m_randomizer = std::bind(distribution, generator);
+    }
+
+    template <typename T>
     T Randomizer<T>::operator()()
     {
         return m_randomizer();
